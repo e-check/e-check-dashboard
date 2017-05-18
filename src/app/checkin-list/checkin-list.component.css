@@ -1,0 +1,32 @@
+#dashboard_body{
+    width: 1070px;
+    margin: auto;
+    font-family: "opensans";
+    font-size: 18px;
+}
+.banner{
+    width: 100%;
+}
+.title {
+    font-size: 28px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+table, th, td {
+    text-align: left;
+    border: 1px solid #979797;
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+th, td {
+    height: 40px;
+    padding-left: 20px; 
+}
+th {
+    background: #d8d8d8;
+}
+p {
+    font-size: 16px;
+}

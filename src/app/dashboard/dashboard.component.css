@@ -1,0 +1,63 @@
+#dashboard_body{
+    width: 1070px;
+    margin: auto;
+    font-family: "opensans";
+    font-size: 18px;
+}
+.banner{
+    width: 100%;
+}
+.title{
+    text-align: center
+}
+.input{
+    margin-right: 40px;
+    display: inline-block;
+    vertical-align: middle;
+}
+.input label{
+    text-align: right;
+    color: #02425E;
+    margin-right: 30px;
+}
+.input input{
+    border-radius: 3px;
+    border-color: #02425E;
+    width: 270px;
+    height: 38px;
+}
+button{
+    width: 160px;
+    height: 40px;
+    background-color: #30a9fa;
+    border-width: 0px;
+    border-radius: 3px;
+    color: white;
+    vertical-align: middle;
+    font-size: 18px;
+}
+hr {
+    margin: 40px 0;
+}
+table {
+    width: 100%;
+}
+table button {
+    float: right;
+}
+.data-table{
+    width:100%
+}
+.data_table_name{
+    font-weight: bold;
+    color: #02425E;
+}
+.data_table_form_id{
+    color: #02425E;
+}
+td {
+    width: 300px;
+}
+tr {
+    height: 70px;
+}

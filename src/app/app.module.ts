@@ -8,13 +8,15 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { CheckinListComponent } from './checkin-list/checkin-list.component';
+import { QrcodeComponent } from './qrcode/qrcode.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     DashboardComponent,
-    CheckinListComponent
+    CheckinListComponent,
+    QrcodeComponent
   ],
   imports: [
     BrowserModule,

@@ -1,3 +1,40 @@
-<p>
-  dashboard works!
-</p>
+<img class="banner" src="assets/images/admin-top.png" />
+<div id="dashboard_body">
+  <div>
+    <div class="input">
+      <label>活动名称</label>
+      <input type="text">
+    </div>
+    <div class="input">
+      <label>金数据表单编号</label>
+      <input type="text">
+    </div>
+    <button (click)="login()">创建签到表</button>
+  </div>
+
+  <hr class="separator"/>
+
+  <table class="data_table">
+    <tr>
+      <td class="data_table_name" >UX Meetup</td>
+      <td class="data_table_form_id" >N1GKD5</td>
+      <td>
+          <button (click)="showQrcode()">查看二维码</button>
+      </td>
+    </tr>
+    <tr>
+      <td class="data_table_name" >DevOps Meetup</td>
+      <td class="data_table_form_id" >N1THD5</td>
+      <td>
+          <button (click)="showQrcode()">查看二维码</button>
+      </td>
+    </tr>
+    <tr>
+      <td class="data_table_name" >BA Meetup</td>
+      <td class="data_table_form_id" >N1THW8</td>
+      <td>
+          <button (click)="showQrcode()">查看二维码</button>
+      </td>
+    </tr>
+  </table>
+</div>
