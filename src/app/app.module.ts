@@ -10,6 +10,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { CheckinListComponent } from './checkin-list/checkin-list.component';
 import { QrcodeComponent } from './qrcode/qrcode.component';
 
+import { EcheckService } from './echeck.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +26,7 @@ import { QrcodeComponent } from './qrcode/qrcode.component';
     HttpModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [EcheckService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

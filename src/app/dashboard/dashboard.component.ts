@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { toCanvas } from 'qrcode'
+import { EcheckService } from './../echeck.service';
 
 
 @Component({
@@ -9,15 +9,28 @@ import { toCanvas } from 'qrcode'
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
+  activities: Array<any>;
 
   constructor(
-    private router: Router
+    private router: Router,
+    private echeckService: EcheckService
   ) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
+    this.showActivities()
   }
 
-  showQrcode(){
-    this.router.navigate(['/qrcode',"abc"]);
+  showQrcode(form_id: string): void {
+    this.router.navigate(['/qrcode'], { queryParams: { form_id: form_id } });
+  }
+
+  showActivities(): void {
+    this.echeckService
+      .getActivities()
+      .then(activities => this.activities = activities);
+  }
+
+  addActivity(activity_name:any, form_id:any): void{
+
   }
 }
