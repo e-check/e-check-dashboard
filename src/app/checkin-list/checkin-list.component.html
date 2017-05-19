@@ -1,37 +1,23 @@
 <img class="banner" src="assets/images/admin-top.png" />
 <div id="dashboard_body">
-  
-    <div class="title">
-      UX Meetup签到表
-    </div>
-    
-
-
-
-
+  <div class="title">
+    {{title}}
+  </div>
   <table class="data_table">
     <tr>
-      <th class="data_table_name" >序号</th>
-      <th class="data_table_form_id" >姓名</th>
+      <th class="data_table_name">序号</th>
+      <th class="data_table_form_id">姓名</th>
       <th>
-          手机号
+        手机号
       </th>
     </tr>
-    <tr>
-      <td class="data_table_name" >5</td>
-      <td class="data_table_form_id" >Xuemin</td>
-      <td>
-          13000001111
+    <tr *ngFor="let checkin of checkin_list">
+      <td class="data_table_name">
+        {{checkin.id}}
       </td>
-    </tr>
-    <tr>
-      <td class="data_table_name" >4</td>
-      <td class="data_table_form_id" >Zhu Ye</td>
-      <td>
-          13000005555
-      </td>
+      <td class="data_table_form_id">{{checkin.name}}</td>
+      <td>{{checkin.cellphone}}</td>
     </tr>
   </table>
-
-  <p>金数据链接：DG4M6D</p>
+  <p>金数据表单编号：{{form_id}}</p>
 </div>

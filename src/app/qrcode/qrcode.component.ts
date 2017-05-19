@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { environment } from 'environments/environment';
 import { toCanvas } from 'qrcode'
 
 @Component({
@@ -16,7 +17,7 @@ export class QrcodeComponent implements OnInit {
   ngOnInit() {
     var qrcode_panel = document.getElementById('qrcode_panel')
     var form_id = this.route.snapshot.queryParams['form_id']
-    var checkin_url = 'http://www.thoughtworks.com?form_id=' + form_id
+    var checkin_url = environment.echeck_checkin_base_url + '?form_id=' + form_id
     toCanvas(qrcode_panel, checkin_url, { scale: 15 }, function (error) {
       if (error) console.error(error)
     })
