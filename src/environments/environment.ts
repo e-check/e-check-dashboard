@@ -6,5 +6,5 @@
 export const environment = {
   production: false,
   echeck_api_base_url: "http://localhost:3000/",
-  echeck_checkin_base_url: "http://localhost:4200/checkin/"
+  echeck_checkin_base_url: "http://localhost:4200/checkin"
 };
