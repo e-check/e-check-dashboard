@@ -4,12 +4,12 @@
 </div>
 <div style="text-align:center">
   <div class="input">
-    <label>用户名</label>
-    <input type="text">
+    <label>邮箱</label>
+    <input #email type="text">
   </div>
   <div class="input">
     <label>密码</label>
-    <input type="text">
+    <input #password type="text">
   </div>
-  <button (click)="login()">登录</button>
+  <button (click)="login(email.value, password.value)">登录</button>
 </div>
