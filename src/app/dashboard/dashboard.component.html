@@ -17,11 +17,11 @@
   <table class="data_table">
     <tr *ngFor="let activity of activities">
       <td class="data_table_name">
-        <span (click)="gotoCheckinList(activity.name, activity.form_id)">{{activity.name}}</span>
+        <span (click)="gotoCheckinList(activity.name, activity.id)">{{activity.name}}</span>
         </td>
       <td class="data_table_form_id">{{activity.form_id}}</td>
       <td>
-        <button (click)="showQrcode(activity.form_id)">查看二维码</button>
+        <button (click)="showQrcode(activity.id)">查看二维码</button>
       </td>
     </tr>
   </table>

@@ -3,20 +3,18 @@
   <div class="title">
     {{title}}
   </div>
-  <table class="data_table">
+  <table>
     <tr>
-      <th class="data_table_name">序号</th>
-      <th class="data_table_form_id">姓名</th>
-      <th>
-        手机号
-      </th>
+      <th>序号</th>
+      <th>姓名</th>
+      <th>手机号</th>
+      <th>签到时间</th>
     </tr>
     <tr *ngFor="let checkin of checkin_list">
-      <td class="data_table_name">
-        {{checkin.id}}
-      </td>
-      <td class="data_table_form_id">{{checkin.name}}</td>
+      <td>{{checkin.id}}</td>
+      <td>{{checkin.name}}</td>
       <td>{{checkin.cellphone}}</td>
+      <td>{{ checkin.created_at | date :  "medium": "+0800" }}</td>
     </tr>
   </table>
   <p>金数据表单编号：{{form_id}}</p>

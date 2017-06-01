@@ -5,13 +5,13 @@ import { HttpModule } from '@angular/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { CookieModule } from 'ngx-cookie';
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { CheckinListComponent } from './checkin-list/checkin-list.component';
 import { QrcodeComponent } from './qrcode/qrcode.component';
 
 import { EcheckService } from './echeck.service';
-import { AppSessionService } from './app-session.service'
 
 @NgModule({
   declarations: [
@@ -23,13 +23,13 @@ import { AppSessionService } from './app-session.service'
   ],
   imports: [
     BrowserModule,
+    CookieModule.forRoot(),
     FormsModule,
     HttpModule,
     AppRoutingModule
   ],
   providers: [
-    EcheckService,
-    AppSessionService
+    EcheckService
   ],
   bootstrap: [AppComponent]
 })

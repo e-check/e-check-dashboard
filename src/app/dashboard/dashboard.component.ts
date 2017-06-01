@@ -19,8 +19,8 @@ export class DashboardComponent implements OnInit {
     this.showActivities()
   }
 
-  showQrcode(form_id: string): void {
-    this.router.navigate(['/qrcode'], { queryParams: { form_id: form_id } });
+  showQrcode(activity_id: string): void {
+    this.router.navigate(['/qrcode'], { queryParams: { activity_id: activity_id } });
   }
 
   showActivities(): void {
@@ -35,7 +35,7 @@ export class DashboardComponent implements OnInit {
       .then(activity => this.activities.push(activity))
   }
 
-  gotoCheckinList(activity_name, form_id) {
-    this.router.navigate(['/checkinlist'], { queryParams: { activity_name: activity_name, form_id: form_id } });
+  gotoCheckinList(activity_name, activity_id) {
+    this.router.navigate(['/checkinlist'], { queryParams: { activity_name: activity_name, activity_id: activity_id } });
   }
 }

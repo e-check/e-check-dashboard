@@ -1,14 +1,14 @@
 import { Injectable } from '@angular/core';
 import { Headers, Http } from '@angular/http';
+import { CookieService } from 'ngx-cookie';
 import 'rxjs/add/operator/toPromise';
 import { environment } from 'environments/environment';
-import { AppSessionService } from './app-session.service'
 
 @Injectable()
 export class EcheckService {
   constructor(
     private http: Http,
-    private appSessionService: AppSessionService
+    private cookieService: CookieService
   ) {
 
   }
@@ -37,9 +37,9 @@ export class EcheckService {
       .then(response => response.json())
   }
 
-  getCheckinList(form_id: string): Promise<any> {
-    var service_endpoint = environment.echeck_api_base_url + '/checkin'
-    return this.http.get(service_endpoint, { headers: this.geneaterHeaders(), params: { form_id: form_id } })
+  getAttendances(activity_id: string): Promise<Array<any>> {
+    var service_endpoint = environment.echeck_api_base_url + '/attendances'
+    return this.http.get(service_endpoint, { headers: this.geneaterHeaders(), params: { activity_id: activity_id } })
       .toPromise()
       .then(response => response.json())
   }
@@ -47,7 +47,7 @@ export class EcheckService {
   geneaterHeaders() {
     var headers = new Headers({
       'Content-Type': 'application/json',
-      'Authorization': 'Bearer ' + this.appSessionService.jwt
+      'Authorization': 'Bearer ' + this.cookieService.get('jwt')
     });
     return headers;
   }

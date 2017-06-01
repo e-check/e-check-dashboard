@@ -9,7 +9,7 @@ import { EcheckService } from './../echeck.service';
 })
 export class CheckinListComponent implements OnInit {
   title: string;
-  form_id: string;
+  activity_id: string;
   checkin_list: Array<any>
 
   constructor(
@@ -19,14 +19,14 @@ export class CheckinListComponent implements OnInit {
 
   ngOnInit() {
     this.title = this.route.snapshot.queryParams['activity_name'];
-    this.form_id = this.route.snapshot.queryParams['form_id'];
+    this.activity_id = this.route.snapshot.queryParams['activity_id'];
 
-    this.showCheckinList(this.form_id);
+    this.showAttendances(this.activity_id);
   }
 
-  showCheckinList(form_id) {
+  showAttendances(activity_id) {
     this.echeckService
-      .getCheckinList(form_id)
-      .then(checkin_list => this.checkin_list = checkin_list)
+      .getAttendances(activity_id)
+      .then(checkin_list => this.checkin_list = checkin_list.reverse())
   }
 }

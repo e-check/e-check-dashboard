@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AppSessionService } from './../app-session.service';
 import { EcheckService } from './../echeck.service';
+import { CookieService } from 'ngx-cookie';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +12,7 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private appSessionService: AppSessionService,
+    private cookieService: CookieService,
     private echeckService: EcheckService
   ) { }
 
@@ -27,7 +27,7 @@ export class LoginComponent implements OnInit {
   }
 
   loginSuccess(jwt) {
-    this.appSessionService.jwt = jwt;
+    this.cookieService.put('jwt', jwt);
     this.router.navigate(['/dashboard']);
   }
 }
