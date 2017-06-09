@@ -20,8 +20,8 @@ export class CheckinListComponent implements OnInit {
   ngOnInit() {
     this.title = this.route.snapshot.queryParams['activity_name'];
     this.activity_id = this.route.snapshot.queryParams['activity_id'];
-
     this.showAttendances(this.activity_id);
+    setInterval(() => this.showAttendances(this.activity_id), 5000);
   }
 
   showAttendances(activity_id) {
